@@ -3,9 +3,11 @@
 
 package api
 
-import proto "github.com/golang/protobuf/proto"
-import fmt "fmt"
-import math "math"
+import (
+	fmt "fmt"
+	proto "github.com/golang/protobuf/proto"
+	math "math"
+)
 
 import (
 	context "golang.org/x/net/context"
@@ -35,16 +37,17 @@ func (m *PostSlug) Reset()         { *m = PostSlug{} }
 func (m *PostSlug) String() string { return proto.CompactTextString(m) }
 func (*PostSlug) ProtoMessage()    {}
 func (*PostSlug) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_4ff743c4d952c683, []int{0}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{0}
 }
+
 func (m *PostSlug) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PostSlug.Unmarshal(m, b)
 }
 func (m *PostSlug) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PostSlug.Marshal(b, m, deterministic)
 }
-func (dst *PostSlug) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PostSlug.Merge(dst, src)
+func (m *PostSlug) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PostSlug.Merge(m, src)
 }
 func (m *PostSlug) XXX_Size() int {
 	return xxx_messageInfo_PostSlug.Size(m)
@@ -76,16 +79,17 @@ func (m *PostObject) Reset()         { *m = PostObject{} }
 func (m *PostObject) String() string { return proto.CompactTextString(m) }
 func (*PostObject) ProtoMessage()    {}
 func (*PostObject) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_4ff743c4d952c683, []int{1}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{1}
 }
+
 func (m *PostObject) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PostObject.Unmarshal(m, b)
 }
 func (m *PostObject) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PostObject.Marshal(b, m, deterministic)
 }
-func (dst *PostObject) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PostObject.Merge(dst, src)
+func (m *PostObject) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PostObject.Merge(m, src)
 }
 func (m *PostObject) XXX_Size() int {
 	return xxx_messageInfo_PostObject.Size(m)
@@ -196,9 +200,9 @@ var _Post_serviceDesc = grpc.ServiceDesc{
 	Metadata: "api.proto",
 }
 
-func init() { proto.RegisterFile("api.proto", fileDescriptor_api_4ff743c4d952c683) }
+func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
-var fileDescriptor_api_4ff743c4d952c683 = []byte{
+var fileDescriptor_00212fb1f9d3bf1c = []byte{
 	// 155 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4c, 0x2c, 0xc8, 0xd4,
 	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4e, 0x2c, 0xc8, 0x54, 0x92, 0xe3, 0xe2, 0x08, 0xc8,

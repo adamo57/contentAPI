@@ -6,13 +6,20 @@ PKG_LIST := $(shell go list ${PKG}/... | grep -v /vendor/)
 
 .PHONY: api build_server 
 
-api/api.pb.go: api/api.proto
+build_api: api/api.proto
 	@protoc -I api/ \
 		--go_out=plugins=grpc:api \
 		api/api.proto
 
+build_php_client:
+	@protoc -I api \
+		--php_out=client \
+		--grpc_out=client \
+		--plugin=protoc-gen-grpc=/usr/local/bin/grpc_php_plugin \
+		api/api.proto
 
-api: api/api.pb.go ## Auto-generate grpc go sources
+
+# api: api/api.pb.go ## Auto-generate grpc go sources
 
 dep: ## Get the dependencies
 	@go get -v -d ./...
